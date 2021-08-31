@@ -8,18 +8,18 @@ import streamlit as st
 # Class definition
 class MultiPage:
 
-    def __init__(self)-> None:
+    def __init__(self) -> None:
         self.pages = []
 
-    def add_pages(self,title,func)-> None:
+    def add_pages(self, title, func) -> None:
         """ Class Mehod to Add pages to the project"""
         self.pages.append({
-            'title':title,
-            'function':func
+            'title': title,
+            'function': func
         })
 
     def run(self):
-        page = st.sidebar.selectbox('Page Navigation',self.pages,format_func=lambda page:page['title'])
+        page = st.sidebar.selectbox('Page Navigation', self.pages, format_func=lambda page: page['title'])
 
         # run app function
         page['function']()
